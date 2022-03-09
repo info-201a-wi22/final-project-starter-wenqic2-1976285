@@ -12,12 +12,10 @@ global_lives <- lives %>%
          -`WHO region`) %>% 
   filter(`WHO region` == "Global") %>% 
   mutate(lives_with_hiv = gsub("\\[.*" ,"",global_lives$original_live_number)) %>% 
-  mutate(estimate_lives_with_hiv = gsub(" " ,"",global_lives$lives_with_hiv)) %>% 
-  arrange(Year) %>% 
-  mutate(new_lives_per_year = as.numeric(estimate_lives_with_hiv) - lag(as.numeric(estimate_lives_with_hiv), 1)) %>% 
-  select(-lives_with_hiv)
-
-View(global_lives)
+  mutate(estimate_lives_with_hiv = gsub(" " ,"",global_lives$original_live_number)) %>% 
+  arrange(Year) 
+  
+View(globa_lives)
 
 
 
