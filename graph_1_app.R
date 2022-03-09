@@ -1,10 +1,9 @@
 library(ggplot2)
 library(shiny)
 library(dplyr)
-setwd("~/Documents/FinalProject/final-project-starter-wenqic2-1976285/source")
-source("Graph-1.R")
+source("source/Graph-1.R")
 
-# Define UI for application that draws a histogram
+# Define UI for application 
 Chart_1 <-
   tabPanel(
     "Graph",
@@ -35,8 +34,7 @@ ui <- (
 server <- function(input, output) {
 
     output$graph <- renderPlot({
-      setwd("~/Documents/FinalProject/final-project-starter-wenqic2-1976285/source")
-      source("Graph-1.R")
+      source("source/Graph-1.R")
       filter(hivdata, WHO_Region == input$region)
        ggplot(hivdata, aes(year, people_with_hiv, color = WHO_Region)) + geom_line() + 
         scale_y_continuous(labels = scales::comma)+
