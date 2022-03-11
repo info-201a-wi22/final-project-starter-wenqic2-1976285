@@ -34,8 +34,10 @@ ggplot(data, aes(x = Year, y = as.numeric(living_with_hiv))) +
   scale_x_discrete(
     breaks = c("1990", "2000", "2010", "2020")
   ) +
+  scale_y_continuous(
+  )+
   xlab("Year") + ylab("Number of people") +
-  labs(title = "Number of people living or dead with hiv")
+  labs(title = "Number of people living with hiv")
 
 ggplot(data, aes(x = Year, y = as.numeric(Number.of.deaths.due.to.HIV.AIDS))) +
   geom_point() +
@@ -43,6 +45,6 @@ ggplot(data, aes(x = Year, y = as.numeric(Number.of.deaths.due.to.HIV.AIDS))) +
     breaks = c("1990", "2000", "2010", "2020")
   ) +
   xlab("Year") + ylab("Number of people") +
-  labs(title = "Number of people living or dead with hiv")
+  labs(title = "Number of people dead with hiv")
 
 

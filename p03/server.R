@@ -7,8 +7,8 @@ source("Untitled.R")
 data
 
 server <- shinyServer(function(input, output) {
-  output$hivPlot <- renderPlotly({
-    ggplot(data, aes(x = Year, y = .data[[input$type]])) +
+  output$hiv_plot <- renderPlotly({
+    ggplot(data, aes(x = Year, y = .data[[input$types]])) +
       geom_point() +
       scale_x_discrete(
         breaks = c("1990", "2000", "2010", "2020")
